@@ -1,4 +1,4 @@
-package Curso;
+package to;
 
 public class CursoTO {
 	private int codigo, numeroDeVagas;

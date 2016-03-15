@@ -1,3 +1,5 @@
+package to;
+
 public class AlunoTO {
 
 	private String nome, dataNascimento, sexo, endereco, complemento, rg, cpf,

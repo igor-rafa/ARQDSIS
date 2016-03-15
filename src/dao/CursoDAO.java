@@ -1,9 +1,12 @@
-package Curso;
+package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import to.CursoTO;
+import factory.ConnectionFactory;
+import model.Curso;
 
 public class CursoDAO {
 

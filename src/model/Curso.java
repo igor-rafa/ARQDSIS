@@ -1,4 +1,4 @@
-package Curso;
+package model;
 
 public class Curso {
 	private int codigo, numeroDeVagas;

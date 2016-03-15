@@ -64,4 +64,64 @@ public class CursoTO {
 	   
 	      return descricaoMaterial;
 	   }
+	   
+	   //Métodos de Modificação
+	   public void setCodigo(int cod){
+		      codigo = cod;
+		   }
+	   
+	   public void setNome(String nvNome){
+	   
+	      nome = nvNome;
+	   }
+	   
+	   public void setTipo(String nvTipo){
+	   
+	      tipo = nvTipo;
+	   }
+	   
+	   public void setDataDeInicio(String nvDataDeInicio){
+	   
+	      dataDeInicio = nvDataDeInicio;
+	   }
+	   
+	   public void setDataDeTermino(String nvDataDeTermino){
+	   
+	      dataDeTermino = nvDataDeTermino;
+	   }
+	   
+	   public void setHorario(String nvHorario){
+	   
+	      horario = nvHorario;
+	   }
+	   
+	   public void setNumeroDeVagas(int nvNumeroDeVagas){
+	   
+	      numeroDeVagas = nvNumeroDeVagas;
+	   }  
+	   
+	   public void setValor(double nvValor){
+	   
+	      valor = nvValor;
+	   }
+	   
+	   public void setTipoLab(String nvTipoLab){
+	   
+	      tipoLab = nvTipoLab;
+	   }
+	   
+	   public void setSoftwares(String nvSoftwares){
+	   
+	      softwares = nvSoftwares;
+	   }
+	   
+	   public void setLivros(String nvLivros){
+	   
+	      livros = nvLivros;
+	   }
+	   
+	   public void setDescricao(String nvDescricao){
+	   
+	      descricaoMaterial = nvDescricao;
+	   }
 }

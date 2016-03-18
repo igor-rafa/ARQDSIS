@@ -220,9 +220,9 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", dataNascimento=" + dataNascimento + ", sexo=" + sexo + ", endereco="
-				+ endereco + ", complemento=" + complemento + ", rg=" + rg + ", cpf=" + cpf + ", email=" + email
-				+ ", telefone=" + telefone + ", codigo=" + codigo + ", numero=" + numero + "]";
+		return "Aluno [nome =" + nome + ", dataNascimento =" + dataNascimento + ", sexo =" + sexo + ", endereco ="
+				+ endereco + ", complemento =" + complemento + ", rg =" + rg + ", cpf =" + cpf + ", email =" + email
+				+ ", telefone =" + telefone + ", codigo =" + codigo + ", numero =" + numero + "]";
 	}
 
 

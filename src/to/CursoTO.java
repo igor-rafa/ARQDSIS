@@ -5,7 +5,7 @@ public class CursoTO {
 	private String nome, tipo, dataDeInicio, dataDeTermino, horario, tipoLab, softwares, livros, descricaoMaterial;
 	private double valor;
 
-	// Métodos de acesso
+	//Métodos de acesso
 	public int getCodigo() {
 
 		return codigo;
@@ -66,7 +66,7 @@ public class CursoTO {
 		return descricaoMaterial;
 	}
 
-	// Métodos de Modificação
+	//Métodos de Modificação
 	public void setCodigo(int codigo) {
 
 		this.codigo = codigo;
@@ -188,7 +188,5 @@ public class CursoTO {
 		if (Double.doubleToLongBits(valor) != Double.doubleToLongBits(other.valor))
 			return false;
 		return true;
-	}
-	
-	
+	}	
 }

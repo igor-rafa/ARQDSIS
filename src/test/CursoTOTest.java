@@ -8,7 +8,9 @@ import org.junit.Test;
 import to.CursoTO;
 
 public class CursoTOTest {
+	
 	CursoTO to; 
+	
 	@Before
 	public void setUp() throws Exception {
 		to = new CursoTO();
@@ -59,7 +61,6 @@ public class CursoTOTest {
 		copia.setSoftwares(to.getSoftwares());
 		copia.setLivros(to.getLivros());
 		copia.setDescricao(to.getDescricao());
-		
 		
 		assertEquals("Teste para verificar se 'to' igual a 'copia'", to, copia);
 	}

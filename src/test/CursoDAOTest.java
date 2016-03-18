@@ -31,7 +31,7 @@ public class CursoDAOTest {
 		to.setDescricao("Nenhum");
 	}
 	
-	public void test00Carregar() {
+	public void testCarregar01() {
 		//para funcionar o cliente 1 deve ter sido carregado no banco por fora
 		//insert into cliente (id, nome, fone) values (1, 'nome1', 'fone1');
 		CursoTO fixture = new CursoTO();
@@ -48,34 +48,44 @@ public class CursoDAOTest {
 		fixture.setLivros("Alguns");
 		fixture.setDescricao("Nenhum");
 		CursoTO novo = dao.carregar(1);
-		novo.setId(1);
+		novo.setCodigo(1);
 		assertEquals("testa inclusao", novo, fixture);
 	}
 
 	@Test
-	public void test01Inserir() {
+	public void testInserir02() {
 		dao.incluir(to);
-		CursoTO novo = dao.carregar(to.getId());
-		novo.setId(to.getId());
-		assertEquals("testa inclusao", novo, to);
+		CursoTO novo = dao.carregar(to.getCodigo());
+		novo.setCodigo(to.getCodigo());
+		assertEquals("Testa a inserção", novo, to);
 	}
 	
 	@Test
-	public void test02Atualizar() {
+	public void testAtualizar03() {
 		to.setNome("i");
 		dao.atualizar(to);
-		CursoTO novo = dao.carregar(to.getId());
-		novo.setId(to.getId());
-		assertEquals("testa inclusao", novo, to);
+		CursoTO novo = dao.carregar(to.getCodigo());
+		novo.setCodigo(to.getCodigo());
+		assertEquals("Testa a alteração", novo, to);
 	}
 	
 	@Test
-	public void test03Excluir() {
+	public void testExcluir04() {
 		to.setNome(null);
-		to.setValor(null);
+		to.setTipo(null);
+		to.setDataDeInicio(null);
+		to.setDataDeTermino(null);
+		to.setHorario(null);
+		to.setValor(0.00);
+		to.setNumeroDeVagas(0);
+		to.setTipoLab(null);
+		to.setSoftwares(null);
+		to.setLivros(null);
+		to.setDescricao(null);
+		
 		dao.excluir(to);
-		CursoTO novo = dao.carregar(to.getId());
-		novo.setId(to.getId());
-		assertEquals("testa inclusao", novo, to);
+		CursoTO novo = dao.carregar(to.getCodigo());
+		novo.setCodigo(to.getCodigo());
+		assertEquals("Testa a exclusão", novo, to);
 	}
 }

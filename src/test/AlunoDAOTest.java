@@ -37,7 +37,7 @@ import dao.AlunoDAO;
 		}
 		
 		@Test
-		public void test00Carregar() {
+		public void testCarregar01() {
 			//para funcionar o cliente 1 deve ter sido carregado no banco por fora
 			AlunoTO fixture = new AlunoTO();
 			fixture.setSexo("Masculino");
@@ -53,11 +53,11 @@ import dao.AlunoDAO;
 
 			AlunoTO novo = dao.carregar(1);
 			novo.setCodigo(1);
-			assertEquals("testa inclusao", novo, fixture);
+			assertEquals("Teste de consulta/carregamento", novo, fixture);
 		}
 		
 		@Test
-		public void testInserir01() {
+		public void testInserir02() {
 			dao.incluir(to);
 			AlunoTO novo = dao.carregar(to.getCodigo());
 			novo.setCodigo(to.getCodigo());
@@ -65,7 +65,7 @@ import dao.AlunoDAO;
 		}
 		
 		@Test
-		public void testAtualizar02() {
+		public void testAtualizar03() {
 			to.setTelefone("2521-5690");
 			to.setEndereco("Rua C");
 			to.setComplemento("Rua B");
@@ -78,7 +78,7 @@ import dao.AlunoDAO;
 		}
 		
 		@Test
-		public void testExcluir03() {
+		public void testExcluir04() {
 
 			to.setNome(null);
 			to.setSexo(null);

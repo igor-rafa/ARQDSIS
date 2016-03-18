@@ -1,5 +1,8 @@
 package model;
 
+import dao.AlunoDAO;
+import to.AlunoTO;
+
 public class Aluno {
 
 	private String nome, dataNascimento, sexo, endereco, complemento, rg, cpf,
@@ -96,6 +99,11 @@ public class Aluno {
 	}
 
 	// Métodos modificadores
+	public void setCodigo(int codigo) {
+
+		this.codigo = codigo;
+	}
+	
 	public void setNome(String nome) {
 
 		this.nome = nome;
@@ -145,5 +153,78 @@ public class Aluno {
 
 		this.telefone = telefone;
 	}
+	
+	public void criar() {
+		AlunoDAO dao = new AlunoDAO();
+		AlunoTO to = new AlunoTO();
+		
+		to.setCodigo(codigo);
+		to.setNome(nome);
+		to.setSexo(sexo);
+		to.setDataNascimento(dataNascimento);
+		to.setTelefone(telefone);
+		to.setEndereco(endereco);
+		to.setNumero(numero);
+		to.setComplemento(complemento);
+		to.setRG(rg);
+		to.setCPF(cpf);
+		to.setEmail(email);
+		
+		dao.incluir(to);
+	}
+
+	public void atualizar() {
+		AlunoDAO dao = new AlunoDAO();
+		AlunoTO to = new AlunoTO();
+		
+		to.setCodigo(codigo);
+		to.setNome(nome);
+		to.setSexo(sexo);
+		to.setDataNascimento(dataNascimento);
+		to.setTelefone(telefone);
+		to.setEndereco(endereco);
+		to.setNumero(numero);
+		to.setComplemento(complemento);
+		to.setRG(rg);
+		to.setCPF(cpf);
+		to.setEmail(email);
+		
+		dao.atualizar(to);
+	}
+
+	public void excluir() {
+		AlunoDAO dao = new AlunoDAO();
+		AlunoTO to = new AlunoTO();
+		
+		to.setCodigo(codigo);
+		
+		dao.excluir(to);
+	}
+
+	public void carregar() {
+		AlunoDAO dao = new AlunoDAO();
+		AlunoTO to = dao.carregar(codigo);
+		
+		codigo = to.getCodigo();
+		nome = to.getNome();
+		sexo = to.getSexo();
+		dataNascimento = to.getDataNascimento();
+		telefone = to.getTelefone();
+		endereco = to.getEndereco();
+		numero = to.getNumero();
+		complemento = to.getComplemento();
+		rg = to.getRG();
+		cpf = to.getCPF();
+		email = to.getEmail();
+	}
+
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", dataNascimento=" + dataNascimento + ", sexo=" + sexo + ", endereco="
+				+ endereco + ", complemento=" + complemento + ", rg=" + rg + ", cpf=" + cpf + ", email=" + email
+				+ ", telefone=" + telefone + ", codigo=" + codigo + ", numero=" + numero + "]";
+	}
+
+
 
 }

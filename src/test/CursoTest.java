@@ -1,8 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
-import model.Cliente;
-
+import model.Curso;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -16,50 +15,70 @@ public class CursoTest {
 	 * Antes de rodar este teste, certifique-se que nao ha no banco nenhuma
 	 * linha com o id igual ao do escolhido para o to instanciado abaixo. Se
 	 * houver, delete. 
-	 * Certifique-se tambÃ©m que sobrecarregou o equals na classe
-	 * Cliente. 
+	 * Certifique-se também que sobrecarregou o equals na classe
+	 * Curso. 
 	 * Certifique-se que a fixture cliente1 foi criada no banco.
-	 * AlÃ©m disso, a ordem de execuÃ§Ã£o dos testes Ã© importante; por
-	 * isso a anotaÃ§Ã£o FixMethodOrder logo acima do nome desta classe
 	 */
 	@Before
 	public void setUp() throws Exception {
-		curso = new Cliente(3, "rafael", "informatica", null, null );
-		copia = new Cliente(3, "rafaeli", "informatica", null, null );
+		curso = new Curso(3 , "Sistemas de informação", "Informática", "18/03/2016", "18/03/2020", "19hrs", 0.0, 100, "Tradicional/Informática", "Jgrasp e Eclipse", "Deithel", "Serão disponibilizados pdf com as aulas");
+		copia = new Curso(3, "Sistemas de informação", "Informática", "18/03/2016", "18/03/2020", "19hrs",  0.0, 100, "Tradicional/Informática", "Jgrasp e Eclipse", "Deithel", "Serão disponibilizados pdf com as aulas");
 	}
 	
 	@Test
 	public void test00Carregar() {
 		//para funcionar o cliente 1 deve ter sido carregado no banco por fora
-		//insert into cliente (id, nome, fone) values (1, 'nome1', 'fone1');
-		Curso fixture = new Curso(1, "nome1", "fone1");
-		Curso novo = new Cliente(1, null, null);
+		Curso fixture = new Curso(1, "nome1", "tipo1", "datainicio1", "datatermino1", "horario1", 0.0, 1, "tipolab1", "softwares1", "livros1", "descricao1");
+		Curso novo = new Curso(1, "nome1", "tipo1", "datainicio1", "datatermino1", "horario1", 0.0, 1, "tipolab1", "softwares1", "livros1", "descricao1");
 		novo.carregar();
-		assertEquals("testa inclusao", novo, fixture);
+		assertEquals("Testa a consulta/carregamento", novo, fixture);
 	}
 
 	@Test
 	public void test01Criar() {
-		Curso.criar();
-		Curso.carregar();
-		assertEquals("testa criacao", Curso, copia);
+		curso.criar();
+		curso.carregar();
+		assertEquals("testa criacao", curso, copia);
 	}
-
 	@Test
 	public void test02Atualizar() {
-		Curso.setTipo("999999");
+		curso.setTipo("999999");
+		curso.setHorario("19hrs");
+		curso.setDataDeInicio("10/10/2016");
+		copia.setDataDeInicio("10/10/2016");
+		copia.setHorario("19hrs");
 		copia.setTipo("999999");		
-		cliente.atualizar();
-		assertEquals("testa inclusao", cliente, copia);
+		curso.atualizar();
+		assertEquals("Testa a alteração", curso, copia);
 	}
 
 	@Test
 	public void test03Excluir() {
-		Curso.setNome(null);
-		Curso.setFone(null);
+		curso.setNome(null);
+		curso.setTipo(null);
+		curso.setDataDeInicio(null);
+		curso.setDataDeTermino(null);
+		curso.setHorario(null);
+		curso.setValor(0.00);
+		curso.setNumeroDeVagas(0);
+		curso.setTipoLab(null);
+		curso.setSoftwares(null);
+		curso.setLivros(null);
+		curso.setDescricao(null);
+		
 		copia.setNome(null);
-		copia.setFone(null);
-		Curso.excluir();
-		assertEquals("testa inclusao", cliente, copia);
+		copia.setTipo(null);
+		copia.setDataDeInicio(null);
+		copia.setDataDeTermino(null);
+		copia.setHorario(null);
+		copia.setValor(0.00);
+		copia.setNumeroDeVagas(0);
+		copia.setTipoLab(null);
+		copia.setSoftwares(null);
+		copia.setLivros(null);
+		copia.setDescricao(null);
+		
+		curso.excluir();
+		assertEquals("Testa a exclusão", curso, copia);
 	}
 }

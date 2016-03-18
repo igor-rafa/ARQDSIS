@@ -73,8 +73,8 @@ public class CursoDAO {
 			}
 		}
 	   
-	   public Curso carregar(int id) {
-		   Curso to = new Curso();
+	   public CursoTO carregar(int id) {
+		   CursoTO to = new CursoTO();
 			String sqlSelect = "Select * from curso where codigo = ?";
 			// usando o try with resources do Java 7, que irá executar o fechamento
 			// do que abriu

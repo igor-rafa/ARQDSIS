@@ -10,7 +10,6 @@ public class Aluno {
 	private int codigo, numero;
 
 	public Aluno() {
-
 		codigo = 0;
 		nome = "";
 		dataNascimento = "";
@@ -22,7 +21,6 @@ public class Aluno {
 		cpf = "";
 		email = "";
 		telefone = "";
-
 	}
 
 	public Aluno(int codigo, String nome, String sexo,
@@ -42,7 +40,7 @@ public class Aluno {
 		this.email = email;
 	}
 
-	// Métodos de acesso
+	//Métodos de acesso
 	public int getCodigo() {
 
 		return codigo;
@@ -98,7 +96,7 @@ public class Aluno {
 		return telefone;
 	}
 
-	// Métodos modificadores
+	//Métodos modificadores
 	public void setCodigo(int codigo) {
 
 		this.codigo = codigo;
@@ -224,7 +222,4 @@ public class Aluno {
 				+ endereco + ", complemento =" + complemento + ", rg =" + rg + ", cpf =" + cpf + ", email =" + email
 				+ ", telefone =" + telefone + ", codigo =" + codigo + ", numero =" + numero + "]";
 	}
-
-
-
 }

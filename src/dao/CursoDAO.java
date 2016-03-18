@@ -9,8 +9,7 @@ import factory.ConnectionFactory;
 import model.Curso;
 
 public class CursoDAO {
-
-
+	
 	   public void incluir(CursoTO to)
 	   {              
 	      String sqlInsert = "INSERT Into curso (nome, tipo, dataDeInicio, dataDeTermino, horario, valor, numeroDeVagas, tipoLab, softwares, livros, descricaoMaterial) values (?,?,?,?,?,?,?,?,?,?,?)";
@@ -103,6 +102,5 @@ public class CursoDAO {
 				System.out.print(e1.getStackTrace());
 			}
 			return to;
-		}
-	
+		}	
 }

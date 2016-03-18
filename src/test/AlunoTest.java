@@ -68,6 +68,7 @@ public class AlunoTest {
 		aluno.setRG(null);
 		aluno.setCPF(null);
 		aluno.setEmail(null);
+		
 		copia.setNome(null);
 		copia.setSexo(null);
 		copia.setDataNascimento(null);

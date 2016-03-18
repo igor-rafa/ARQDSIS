@@ -5,7 +5,7 @@ public class CursoTO {
 	private String nome, tipo, dataDeInicio, dataDeTermino, horario, tipoLab, softwares, livros, descricaoMaterial;
 	private double valor;
 
-	//Métodos de acesso
+	//Metodos de acesso
 	public int getCodigo() {
 
 		return codigo;
@@ -66,7 +66,7 @@ public class CursoTO {
 		return descricaoMaterial;
 	}
 
-	//Métodos de Modificação
+	//Metodos de Modificação
 	public void setCodigo(int codigo) {
 
 		this.codigo = codigo;
@@ -189,4 +189,5 @@ public class CursoTO {
 			return false;
 		return true;
 	}	
+	
 }

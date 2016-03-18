@@ -5,7 +5,7 @@ public class AlunoTO {
 	private String nome, dataNascimento, sexo, endereco, complemento, rg, cpf, email, telefone;
 	private int codigo, numero;
 
-	// Métodos de acesso
+	//Métodos de acesso
 	public int getCodigo() {
 
 		return codigo;

@@ -10,7 +10,7 @@ public class AlunoTOTest {
 	AlunoTO to;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() throws Exception{
 		to = new AlunoTO();
 		to.setNome("Igor Apolinário");
 		to.setSexo("Masculino");
@@ -25,7 +25,7 @@ public class AlunoTOTest {
 	}
 	
 	@Test
-	public void testGets() {
+	public void testGets(){
 		assertEquals("getNome", to.getNome(), "Igor Apolinário");
 		assertEquals("getSexo", to.getSexo(), "Masculino");
 		assertEquals("getDataNascimento", to.getDataNascimento(), "20/06/1996");
@@ -39,8 +39,7 @@ public class AlunoTOTest {
 	}
 	
 	@Test
-	public void testEquals(){
-		
+	public void testEquals(){		
 		AlunoTO alu = new AlunoTO();
 		
 		alu.setNome(to.getNome());

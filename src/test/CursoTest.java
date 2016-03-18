@@ -39,6 +39,7 @@ public class CursoTest {
 		curso.carregar();
 		assertEquals("testa criacao", curso, copia);
 	}
+	
 	@Test
 	public void test02Atualizar() {
 		curso.setTipo("999999");
@@ -64,6 +65,7 @@ public class CursoTest {
 		curso.setSoftwares(null);
 		curso.setLivros(null);
 		curso.setDescricao(null);
+		
 		copia.setNome(null);
 		copia.setTipo(null);
 		copia.setDataDeInicio(null);

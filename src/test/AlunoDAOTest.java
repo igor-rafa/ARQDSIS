@@ -7,7 +7,6 @@ import to.AlunoTO;
 import dao.AlunoDAO;
 
 	public class AlunoDAOTest {
-	
 		AlunoDAO dao;
 		AlunoTO to;
 		
@@ -20,6 +19,7 @@ import dao.AlunoDAO;
 		 * Além disso, a ordem de execução dos testes é importante; por isso a anotação
 		 * FixMethodOrder logo acima do nome desta classe
 		 */
+		
 		@Before
 		public void setUp() throws Exception {
 			dao = new AlunoDAO();
@@ -79,7 +79,6 @@ import dao.AlunoDAO;
 		
 		@Test
 		public void testExcluir04() {
-
 			to.setNome(null);
 			to.setSexo(null);
 			to.setDataNascimento(null);
@@ -95,5 +94,4 @@ import dao.AlunoDAO;
 			novo.setCodigo(to.getCodigo());
 			assertEquals("Teste de exclusão", novo, to);
 		}
-
 }

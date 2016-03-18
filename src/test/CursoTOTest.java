@@ -26,7 +26,6 @@ public class CursoTOTest {
 		to.setSoftwares("Nenhum");
 		to.setLivros("Deithel");
 		to.setDescricao("Nenhuma");
-
 	}
 
 	@Test
@@ -42,13 +41,13 @@ public class CursoTOTest {
 		assertEquals("getTipoLab", to.getTipo(), "A");
 		assertEquals("getSoftwares", to.getSoftwares(), "Nenhum");
 		assertEquals("getLivros", to.getLivros(), "Deithel");	
-		assertEquals("getDescricao", to.getDescricao(), "Nenhumaa");
-		
+		assertEquals("getDescricao", to.getDescricao(), "Nenhumaa");	
 	}
 	
 	@Test
 	public void testEquals(){
 		CursoTO copia = new CursoTO();
+		
 		copia.setCodigo(to.getCodigo());
 		copia.setNome(to.getNome());
 		copia.setTipo(to.getTipo());
@@ -64,5 +63,4 @@ public class CursoTOTest {
 		
 		assertEquals("Teste para verificar se 'to' igual a 'copia'", to, copia);
 	}
-
 }

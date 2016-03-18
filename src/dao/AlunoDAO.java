@@ -75,9 +75,8 @@ public class AlunoDAO {
 	
 	public AlunoTO carregar(int id) {
 		AlunoTO to = new AlunoTO();
-		String sqlSelect = "Select * from aluno where codigo = ?";
-		// usando o try with resources do Java 7, que irá executar o fechamento
-		// do que abriu
+		String sqlSelect = "Select * FROM aluno where codigo = ?";
+		// usando o try with resources do Java 7, que irá executar o fechamento do que abriu
 		
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlSelect);) {

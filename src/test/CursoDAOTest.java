@@ -32,7 +32,6 @@ public class CursoDAOTest {
 	
 	public void testCarregar01() {
 		//para funcionar o cliente 1 deve ter sido carregado no banco por fora
-		//insert into cliente (id, nome, fone) values (1, 'nome1', 'fone1');
 		CursoTO fixture = new CursoTO();
 		fixture.setCodigo(1);
 		fixture.setNome("Rafael");
@@ -62,7 +61,6 @@ public class CursoDAOTest {
 	
 	@Test
 	public void testAtualizar03() {
-		
 		to.setNome("Segurança da informação");
 		to.setDescricao("Cuida da segurança dos dados");
 		dao.atualizar(to);
@@ -89,6 +87,7 @@ public class CursoDAOTest {
 		dao.excluir(to);
 		CursoTO novo = dao.carregar(to.getCodigo());
 		novo.setCodigo(to.getCodigo());
+		
 		assertEquals("Testa a exclusão", novo, to);
 	}
 }

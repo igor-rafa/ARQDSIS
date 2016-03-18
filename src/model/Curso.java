@@ -9,7 +9,6 @@ public class Curso {
 	private double valor;
 
 	public Curso() {
-
 		codigo = 0;
 		nome = "";
 		tipo = "";
@@ -42,7 +41,7 @@ public class Curso {
 		this.descricaoMaterial = descricaoMaterial;
 	}
 
-	// Métodos de Modificação
+	//Métodos de Modificação
 	public void setNome(String nome) {
 
 		this.nome = nome;
@@ -235,5 +234,4 @@ public class Curso {
 				+ ", tipoLab=" + tipoLab + ", softwares=" + softwares + ", livros=" + livros + ", descricaoMaterial="
 				+ descricaoMaterial + ", valor=" + valor + "]";
 	}
-
 }

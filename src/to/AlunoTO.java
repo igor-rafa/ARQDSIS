@@ -2,7 +2,8 @@ package to;
 
 public class AlunoTO {
 
-	private String nome, dataNascimento, sexo, endereco, complemento, rg, cpf, email, telefone;
+	private String nome, dataNascimento, sexo, endereco, complemento, rg, cpf,
+			email, telefone;
 	private int codigo, numero;
 
 	// Métodos de acesso
@@ -61,7 +62,7 @@ public class AlunoTO {
 		return telefone;
 	}
 
-	//Métodos modificadores
+	// Métodos modificadores
 	public void setCodigo(int codigo) {
 
 		this.codigo = codigo;
@@ -177,4 +178,7 @@ public class AlunoTO {
 			return false;
 		return true;
 	}
+
+	
+
 }

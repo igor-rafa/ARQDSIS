@@ -8,7 +8,8 @@ import org.junit.Test;
 import dao.CursoDAO;
 import to.CursoTO;
 
-public class CursoDAOTest {	
+public class CursoDAOTest {
+	
 	CursoDAO dao;
 	CursoTO to;
 	
@@ -55,18 +56,14 @@ public class CursoDAOTest {
 	public void testInserir02() {
 		dao.incluir(to);
 		CursoTO novo = dao.carregar(to.getCodigo());
-		
 		novo.setCodigo(to.getCodigo());
 		assertEquals("Testa a inserção", novo, to);
 	}
 	
 	@Test
 	public void testAtualizar03() {
-		
-		to.setNome("Segurança da informação");
-		to.setDescricao("Cuida da segurança dos dados");
+		to.setNome("i");
 		dao.atualizar(to);
-		
 		CursoTO novo = dao.carregar(to.getCodigo());
 		novo.setCodigo(to.getCodigo());
 		assertEquals("Testa a alteração", novo, to);

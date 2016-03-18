@@ -40,9 +40,7 @@ public class AlunoTOTest {
 	
 	@Test
 	public void testEquals(){
-		
 		AlunoTO alu = new AlunoTO();
-		
 		alu.setNome(to.getNome());
 		alu.setSexo(to.getSexo());
 		alu.setDataNascimento(to.getDataNascimento());

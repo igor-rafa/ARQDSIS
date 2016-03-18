@@ -24,18 +24,18 @@ public class Curso {
 		descricaoMaterial = "";
 	}
 
-	public Curso(int codigo, String nome, String tipo, String nvDataDeInicio, String nvDataDeTermino, String nvHorario,
-			double nvValor, int nvNumeroDeVagas, String tipoLab, String softwares, String livros,
+	public Curso(int codigo, String nome, String tipo, String dataDeInicio, String dataDeTermino, String horario,
+			double valor, int numeroDeVagas, String tipoLab, String softwares, String livros,
 			String descricaoMaterial) {
 
 		this.codigo = codigo;
 		this.nome = nome;
 		this.tipo = tipo;
-		this.dataDeInicio = nvDataDeInicio;
-		this.dataDeTermino = nvDataDeTermino;
-		this.horario = nvHorario;
-		this.valor = nvValor;
-		this.numeroDeVagas = nvNumeroDeVagas;
+		this.dataDeInicio = dataDeInicio;
+		this.dataDeTermino = dataDeTermino;
+		this.horario = horario;
+		this.valor = valor;
+		this.numeroDeVagas = numeroDeVagas;
 		this.tipoLab = tipoLab;
 		this.softwares = softwares;
 		this.livros = livros;

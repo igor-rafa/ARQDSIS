@@ -90,7 +90,6 @@ import dao.AlunoDAO;
 			to.setRG(null);
 			to.setCPF(null);
 			to.setEmail(null);
-			
 			dao.excluir(to);
 			AlunoTO novo = dao.carregar(to.getCodigo());
 			novo.setCodigo(to.getCodigo());

@@ -14,9 +14,8 @@ public class CursoTest {
 	/*
 	 * Antes de rodar este teste, certifique-se que nao ha no banco nenhuma
 	 * linha com o id igual ao do escolhido para o to instanciado abaixo. Se
-	 * houver, delete. 
-	 * Certifique-se também que sobrecarregou o equals na classe
-	 * Curso. 
+	 * houver, delete
+	 * Certifique-se também que sobrecarregou o equals na classe Curso. 
 	 * Certifique-se que a fixture cliente1 foi criada no banco.
 	 */
 	@Before
@@ -65,7 +64,6 @@ public class CursoTest {
 		curso.setSoftwares(null);
 		curso.setLivros(null);
 		curso.setDescricao(null);
-		
 		copia.setNome(null);
 		copia.setTipo(null);
 		copia.setDataDeInicio(null);

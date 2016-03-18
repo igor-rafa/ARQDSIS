@@ -60,7 +60,7 @@ public class CursoDAO {
 	   }
 	   
 	   public void excluir(CursoTO to) {
-			String sqlDelete = "DELETE FROM cliente WHERE id = ?";
+			String sqlDelete = "DELETE FROM curso WHERE codigo = ?";
 			// usando o try with resources do Java 7, que irá executar o fechamento
 			// do que abriu
 

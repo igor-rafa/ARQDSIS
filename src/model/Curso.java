@@ -40,6 +40,67 @@ public class Curso {
 		this.livros = livros;
 		this.descricaoMaterial = descricaoMaterial;
 	}
+	
+	//Metodos de acesso
+	public int getCodigo() {
+
+		return codigo;
+	}
+
+	public String getNome() {
+
+		return nome;
+	}
+
+	public String getTipo() {
+
+		return tipo;
+	}
+
+	public String getDataDeInicio() {
+
+		return dataDeInicio;
+	}
+
+	public String getDataDeTermino() {
+
+		return dataDeTermino;
+	}
+
+	public String getHorario() {
+
+		return horario;
+	}
+
+	public int getNumeroDeVagas() {
+
+		return numeroDeVagas;
+	}
+
+	public double getValor() {
+
+		return valor;
+	}
+
+	public String getTipoLab() {
+
+		return tipoLab;
+	}
+
+	public String getSoftwares() {
+
+		return softwares;
+	}
+
+	public String getLivros() {
+
+		return livros;
+	}
+
+	public String getDescricao() {
+
+		return descricaoMaterial;
+	}
 
 	//Métodos de Modificação
 	public void setNome(String nome) {

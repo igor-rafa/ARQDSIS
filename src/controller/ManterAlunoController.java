@@ -1,8 +1,7 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Aluno;
+import to.AlunoTO;
 
 @WebServlet("/Manter_Aluno.do")
 
@@ -49,21 +49,23 @@ public class ManterAlunoController extends HttpServlet{
 		}
 		aluno.carregar();
 		
-		PrintWriter out = response.getWriter();
-		out.println("<html><head><title>Aluno Cadastrado!");
-		out.println("</title></head><body>");
-		out.println("Código: "+ aluno.getCodigo()+"<br>");
-		out.println("Nome: "+ aluno.getNome()+"<br>");
-		out.println("Data de Nascimento: "+ aluno.getDataNascimento()+"<br>");
-		out.println("Sexo: "+ aluno.getSexo()+"<br>");
-		out.println("Endereço: "+ aluno.getEndereco()+"<br>");
-		out.println("Número: "+ aluno.getNumero()+"<br>");
-		out.println("Complemento: "+ aluno.getComplemento()+"<br>");
-		out.println("RG: "+ aluno.getRG()+"<br>");
-		out.println("CPF: "+ aluno.getCPF()+"<br>");
-		out.println("Email: "+ aluno.getEmail()+"<br>");
-		out.println("Telefone: "+ aluno.getTelefone()+"<br>");
-		out.println("</body></html>");
+		AlunoTO to = new AlunoTO();
+		to.setCodigo(aluno.getCodigo());
+		to.setNome(aluno.getNome());
+		to.setSexo(aluno.getSexo());
+		to.setDataNascimento(aluno.getDataNascimento());
+		to.setEndereco(aluno.getEndereco());
+		to.setNumero(aluno.getNumero());;
+		to.setComplemento(aluno.getComplemento());
+		to.setRG(aluno.getRG());
+		to.setCPF(aluno.getCPF());
+		to.setTelefone(aluno.getTelefone());
+		to.setEmail(aluno.getEmail());
+		
+		request.setAttribute("aluno", to);
+		
+		RequestDispatcher view = request.getRequestDispatcher("Aluno.jsp");
+		view.forward(request, response);
 	}
 
 }	

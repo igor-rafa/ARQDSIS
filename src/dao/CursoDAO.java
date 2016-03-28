@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 import to.CursoTO;
 import factory.ConnectionFactory;
-import model.Curso;
 
 public class CursoDAO {
 	

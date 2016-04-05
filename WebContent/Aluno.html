@@ -1,45 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gerenciar Aluno</title>
+  <meta charset="utf-8">
+  <title>Gerenciar Aluno</title>
 
-<!-- Bootstrap -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap.css" rel="stylesheet">
-</head>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+</head> 
 <body>
- <div class="container">
+  <div class="background">
+    <div class="formulario">
+      <div class="panel panel-info" style="width:980px;">
+        <div class="panel-heading"> 
+          <h3 class="panel-title">Aluno</h3> 
+        </div>
+        <div class="panel-body">
+          <form action="Manter_Curso.do" method="post">
+            <table>
+              <tr>
+                <td>
+                  <p>Codigo</p>
+                </td>
+                <td >
+                  <p>Nome</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="number" class="form-control" style="width:80px;" name="codigo">
+                </td>
+                <td colspan="2">
+                  <input type="text" class="form-control" style="width:430px" name="nome">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Sexo</p>
+                </td>
+                <td colspan="2">
+                  <p>Endereço</p>
+                </td>
+                <td >
+                  <p>Número</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <input type="radio" name="sexo" value="masculino" checked>Masculino
+                    <input type="radio" name="sexo" value="feminino">Feminino
+                </td>
+                <td colspan="2">
+                  <input type="text" class="form-control" style="width:430px" name="endereco">
+                </td>
+                <td>
+                  <input type="number" class="form-control"  name="numero">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>Complemento</p>
+                </td>
+                <td>
+                  <p>RG</p>
+                </td>
+                <td>
+                  <p>CPF</p>
+                </td>
+              </tr>
+              <tr>
 
-	<form action="Manter_Aluno.do" method="post">
-	 <fieldset>
-	 <legend>Gerenciamento de alunos</legend>
-		<label class="" for="codigo">Código</label><input type="number" name="codigo" id="codigo" size="5" maxlength="5" placeholder="código" x-moz-errormessage="Ops. Não esqueça de preencher este campo." required><br/>
-		<label class="" for="nome">Nome</label><input type="text" name="nome" id="nome" size="40" maxlength="60" x-moz-errormessage="Ops. Não esqueça de preencher este campo." required><br/>
-		<label class="" for="dataNascimento">Data de nascimento</label><input type="text" name="dataNascimento" id="dataNascimento" size="12" maxlength="10"><br/>
-		<label class="">Sexo</label>
-		<input type="radio" name="sexo" value="masculino" checked><label class="">Masculino</label>
-		<input type="radio" name="sexo" value="feminino"><label class="">Feminino</label><br/>
-		<label class="" for="endereco">Endereço</label><input type="text" name="endereco" id="endereco" size="36" maxlength="60"><br/>
-		<label class="" for="numero">Número</label><input type="number" name="numero" id="numero" size="5" maxlength="6"><br/>
-		<label class="" for="complemento">Complemento</label><input type="text" name="complemento" id="complemento" size="20" maxlength="30" ><br/>
-		<label class="" for="rg">RG</label><input type="text" name="rg" id="rg" size="12" maxlength="15"><br/>
-		<label class="" for="cpf">CPF</label><input type="text" name="cpf" id="cpf" size="12" maxlength="15"><br/>
-		<label class="" for="email">Email</label><input type="text" name="email" id="email" size="40" maxlength="50"><br/>
-		<label class="" for="telefone">Telefone</label><input type="text" name="telefone" id="telefone" size="12" maxlength="12"><br/><br/>
-		<input type="submit" class="" name="acao" value="Inserir">
-		<input type="submit" class="" name="acao" value="Atualizar">
-		<input type="submit" class="" name="acao" value="Carregar">
-		<input type="submit" class="" name="acao" value="Excluir">	
-	 </fieldset>	
-	</form>
- </div>
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+                <td>
+                  <input type="text" class="form-control" name="complemento">
+                </td>
+                <td>
+                  <input type="text" class="form-control"  name="rg">
+                </td>
+                <td>
+                  <input type="text" class="form-control" name="cpf">
+                </td>
+                <!---->
+              </tr>
+              <tr>
+                <td>
+                  <p>Telefone</p>
+                </td>
+                <td>
+                  <p>Email</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" class="form-control" name="telefone">
+                </td>
+                <td colspan="2">
+                  <input type="text" class="form-control"  name="email">
+                </td>
+              </tr>
+            </table>
+            <div class="botoes">
+              <input type="submit" class="btn btn-success" name="acao" value="Inserir">
+              <input type="submit" class="btn btn-warning" name="acao" value="Atualizar">
+              <input type="submit" class="btn btn-info" name="acao" value="Carregar">
+              <input type="submit" class="btn btn-danger" name="acao" value="Excluir">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

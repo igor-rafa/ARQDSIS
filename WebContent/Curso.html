@@ -1,126 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Gerenciar Curso</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Gerenciar Curso</title>
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body> 
+  <div id="main" class="container-fluid">
+    <h3 class="page-header">Adicionar Curso</h3>
+    <form action="Manter_Curso.do" method="post">
+      <div class="row">
+        <div class="form-group col-md-2">
+          <label for="codigo">Codigo</label>
+          <input type="text" class="form-control" id="codigo">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome">
+        </div>
+        <div class="form-group col-md-4">
+         <label for="Tipo">Tipo</label>
+         <input type="text" class="form-control" id="tipo">
+       </div>
+     </div>
 
-</head>	
-<body style="background-color:black">
-	<div class="background">
-		<div class="formulario">
-			<div class="panel panel-success" style="width:980px;">
-				<div class="panel-heading"> 
-					<h3 class="panel-title">Curso</h3> 
-				</div>
-				<div class="panel-body">
-					<form action="Manter_Curso.do" method="post">
-						<table>
-							<tr>
-								<td>
-									<p>Codigo</p>
-								</td>
-								<td colspan="2">
-									<p>Nome</p>
-								</td>
-								<td>
-									<p>Tipo</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="number" class="form-control" style="width:80px;" name="codigo">
-								</td>
-								<td colspan="2">
-									<input type="text" class="form-control" style="width:430px" name="nome">
-								</td>
-								<td>
-									<input type="text" class="form-control"  name="tipo">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Data/Inicio</p>
-								</td>
-								<td>
-									<p>Data/Fim</p>
-								</td>
-								<td>
-									<p>Horário</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="Date" class="form-control"  name="dataInicio">
-								</td>
-								<td>
-									<input type="Date" class="form-control"  name="dataTermino">
-								</td>
-								<td>
-									<input type="time" class="form-control" name="horario">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Valor</p>
-								</td>
-								<td>
-									<p>Número de vagas</p>
-								</td>
-								<td>
-									<p>Tipos de Laboratorios</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="number" class="form-control"  name="valor">
-								</td>
-								<td>
-									<input type="number" class="form-control" name="numeroVagas">
-								</td>
-								<td>
-									<input type="text" class="form-control"  name="tipoLaboratorio">
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<p>Softwares</p>
-								</td>
-								<td colspan="2">
-									<p>Livros</p>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<input type="text" class="form-control" style="width:430px" name="softwares">
-								</td>
-								<td colspan="2">
-									<input type="text" class="form-control" style="width:430px" name="livros">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Descrição</p>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="4">
-									<input type="text" class="form-control" style="width:859px" name="descricao">
-								</td>
-							</tr>
-						</table>
-						<div class="botoes">
-							<input type="submit" class="btn btn-success" name="acao" value="Inserir">
-							<input type="submit" class="btn btn-warning" name="acao" value="Atualizar">
-							<input type="submit" class="btn btn-info" name="acao" value="Carregar">
-							<input type="submit" class="btn btn-danger" name="acao" value="Excluir">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+     <div class="row">
+      <div class="form-group col-md-4">
+        <label for="data/inicio">Data/Inicio</label>
+        <input type="Date" class="form-control" id="dataInicio">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="Data/Fim">Data/Fim</label>
+        <input type="Date" class="form-control" id="dataTermino">
+      </div>
+      <div class="form-group col-md-4">
+       <label for="campo3">HorÃ¡rio</label>
+       <input type="time" class="form-control" id="horario">
+     </div>
+   </div>
+
+   <div class="row">
+    <div class="form-group col-md-4">
+      <label for="Valor">Valor</label>
+      <input type="number" class="form-control" id="valor">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="numero">NÃºmero de vagas</label>
+      <input type="number" class="form-control" id="numeroVagas">
+    </div>
+    <div class="form-group col-md-4">
+     <label for="Tipos">Tipos de Laboratorios</label>
+     <input type="text" class="form-control" id="tipoLaboratorio">
+   </div>
+ </div>
+
+ <div class="row">
+  <div class="form-group col-md-6">
+    <label for="Softwares">Softwares</label>
+    <input type="text" class="form-control" id="softwares">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="Livros">Livros</label>
+    <input type="text" class="form-control" id="livros">
+  </div>
+</div>
+<div class="row">
+  <div class="form-group col-md-12">
+    <label for="Softwares">DescriÃ§Ã£o</label>
+    <input type="text" class="form-control" id="softwares">
+  </div>
+</div>
+<hr />
+
+<div id="actions" class="row">
+  <div class="col-md-12">
+    <input type="submit" class="btn btn-success" name="acao" value="Inserir">
+    <input type="submit" class="btn btn-warning" name="acao" value="Atualizar">
+    <input type="submit" class="btn btn-info" name="acao" value="Carregar">
+    <input type="submit" class="btn btn-danger" name="acao" value="Excluir">
+  </div>
+</div>
+</form>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

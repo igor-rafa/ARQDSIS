@@ -9,7 +9,7 @@ import java.io.IOException;
 
 	public class Properties getProp() throws IOException {
 		Properties props = new Properties();
-		FileInputStream file = new FileInputStream('./properties/config.properties');
+		FileInputStream file = new FileInputStream("./properties/config.properties");
 		props.load(file);
 		return props;
 	}

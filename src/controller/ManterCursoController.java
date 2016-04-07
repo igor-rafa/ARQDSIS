@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -54,22 +52,24 @@ public class ManterCursoController extends HttpServlet{
 		}
 		curso.carregar();
 		
-		PrintWriter out = response.getWriter();
-		out.println("<html><head><title>Cliente Cadastrado");
-		out.println("</title>Curso</head><body>");
-		out.println("Código: "+curso.getCodigo()+"<br>");
-		out.println("Nome: "+curso.getNome()+"<br>");
-		out.println("Tipo: "+curso.getTipo()+"<br>");
-		out.println("Data de Inicio: "+curso.getDataDeInicio()+"<br>");
-		out.println("Data de Termino: "+curso.getDataDeTermino()+"<br>");
-		out.println("Horario: "+curso.getHorario()+"<br>");
-		out.println("Numero de Vagas: "+curso.getNumeroDeVagas()+"<br>");
-		out.println("Valor: "+curso.getValor()+"<br>");
-		out.println("Tipo de Laboratorio: "+curso.getTipoLab()+"<br>");
-		out.println("Softwares: "+curso.getSoftwares()+"<br>");
-		out.println("Livros: "+curso.getLivros()+"<br>");
-		out.println("Descrição: "+curso.getDescricao()+"<br>");
-		out.println("</body></html>");
+		CursoTo to = new CursoTO();
+		to.setCodigo(curso.getCodigo());
+		to.setNome(curso.getNome());
+		to.setTipo(curso.getTipo());
+		to.setDataDeInicio(curso.getDataDeInicio());
+		to.setDataDeTermino(curso.getDataDeTermino());
+		to.setHorario(curso.getHorario());
+		to.setNumeroDeVagas(curso.getNumeroDeVagas());
+		to.setValor(curso.getValor());
+		to.setTipoLab(curso.getTipoLab());
+		to.setSoftwares(curso.getSoftwares());
+		to.setLivros(curso.getLivros());
+		to.setDescricao(curso.getDescricao());
+		
+		request.setAttribute("curso", to);
+		
+		RequestDispatcher view = request.getRequestDispatcher("Curso.jsp");
+		view.forward(request, response);
 	}
 	
 }

@@ -2,14 +2,14 @@ package model;
 
 import java.util.ArrayList;
 
-import dao.ListarTodosCursosDAO;
+import dao.CursoDAO;
 import to.CursoTO;
 
 public class ListarTodosCursos {
 
 	public ArrayList<CursoTO> listarCursos() {
 		ArrayList<CursoTO> lista;
-		ListarTodosCursosDAO dao = new ListarTodosCursosDAO();
+		CursoDAO dao = new CursoDAO();
 		lista = dao.listarCursos();
 
 		return lista;

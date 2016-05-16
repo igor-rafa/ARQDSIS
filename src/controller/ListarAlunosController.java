@@ -12,10 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.ListarAlunos;
-import model.Vendedor;
 import to.AlunoTO;
-import to.ClienteTO;
-
 
 /**
  * Servlet implementation class ListarAlunosController

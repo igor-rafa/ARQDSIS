@@ -21,7 +21,7 @@
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Adicionar Aluno #${aluno.codigo } %></h3>
         <!-- Formulario para alteração de alunos -->
-		<form action="Manter_Aluno.do" method="post">
+		<form action="controller.do" method="post">
            <!-- area de campos do form -->
            <input type="hidden" name="codigo" value="${aluno.codigo }" />
 			<div class="row">

@@ -22,7 +22,7 @@
 	<div id="main" class="container">
 		<h3 class="page-header">Alterar Curso #${curso.codigo } %></h3>
 		<!-- Formulario para alteração de cursos -->
-		<form action="Manter_Curso.do" method="post">
+		<form action="controller.do" method="post">
            <!-- area de campos do form -->
            <input type="hidden" name="codigo" value="${curso.codigo }" />
 			<div class="row">

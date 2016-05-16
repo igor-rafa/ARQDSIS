@@ -28,7 +28,7 @@
                             Deseja realmente excluir este curso?
                         </div>
                         <div class="modal-footer">
-                            <form action="ManterCurso.do" method="post">
+                            <form action="controller.do" method="post">
                                 <input type="hidden" name="id" id="id_excluir" />
                                 <button type="submit" class="btn btn-primary" name="acao" value="Excluir">Sim</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
@@ -42,7 +42,7 @@
 			<c:import url="Menu.jsp"/>
             <!-- Container Principal -->
             <div id="main" class="container-fluid">
-                <form action="listar_cursos.do" method="post">
+                <form action="controller.do" method="post">
                     <div id="top" class="row">
                         <div class="col-md-3">
                             <h2>Cursos</h2>
@@ -128,8 +128,8 @@
                                                 ${curso.descricaoMaterial }
                                             </td>
                                             <td class="actions">
-                                                <a class="btn btn-success btn-xs" href="ManterCurso.do?acao=Visualizar&id=${curso.codigo }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="ManterCurso.do?acao=Editar&id=${curso.codigo }">Editar</a>
+                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarCurso&id=${curso.codigo }">Visualizar</a>
+                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarCurso&id=${curso.codigo }">Editar</a>
                                                 <button id="btn${curso.codigo }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${curso.codigo }">Excluir</button>
                                             </td>
                                         </tr>

@@ -28,7 +28,7 @@
                             Deseja realmente excluir este aluno?
                         </div>
                         <div class="modal-footer">
-                            <form action="ManterCliente.do" method="post">
+                            <form action="controller.do" method="post">
                                 <input type="hidden" name="id" id="id_excluir" />
                                 <button type="submit" class="btn btn-primary" name="acao" value="Excluir">Sim</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
@@ -42,7 +42,7 @@
 			<c:import url="Menu.jsp"/>
             <!-- Container Principal -->
             <div id="main" class="container-fluid">
-                <form action="listar_alunos.do" method="post">
+                <form action="controller.do" method="post">
                     <div id="top" class="row">
                         <div class="col-md-3">
                             <h2>Alunos</h2>
@@ -124,8 +124,8 @@
                                                 ${aluno.telefone }
                                             </td>
                                             <td class="actions">
-                                                <a class="btn btn-success btn-xs" href="ManterAluno.do?acao=Visualizar&id=${aluno.codigo }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="ManterAluno.do?acao=Editar&id=${aluno.codigo }">Editar</a>
+                                                <a class="btn btn-success btn-xs" href="controller.do?command=VisualizarAluno&id=${aluno.codigo }">Visualizar</a>
+                                                <a class="btn btn-warning btn-xs" href="controller.do?command=EditarAluno&id=${aluno.codigo }">Editar</a>
                                                 <button id="btn${aluno.codigo }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${aluno.codigo }">Excluir</button>
                                             </td>
                                         </tr>

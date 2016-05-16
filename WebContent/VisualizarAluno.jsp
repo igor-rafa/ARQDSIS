@@ -27,7 +27,7 @@
                                 Deseja realmente excluir este aluno?
                             </div>
                             <div class="modal-footer">
-                                <form action="ManterAluno.do" method="post">
+                                <form action="controller.do" method="post">
                                     <input type="hidden" name="id" value="${aluno.codigo }" />
                                     <button type="submit" class="btn btn-primary" name="acao" value="Excluir">Sim</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
@@ -124,7 +124,7 @@
                     <hr />
                     <div id="actions" class="row">
                         <div class="col-md-12">
-                            <a href="ManterAluno.do?acao=Editar&id=${aluno.id }" class="btn btn-primary">Editar</a>
+                            <a href="controller.do?command=EditarAluno&id=${aluno.id }" class="btn btn-primary">Editar</a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Excluir</a>
                             <a href="ListarAlunos.jsp" class="btn btn-default">Voltar</a>
                         </div>

@@ -14,7 +14,7 @@
 	<!-- Container Principal -->
   	<div id="main" class="container-fluid">
     <h3 class="page-header">Adicionar Curso</h3>
-    <form action="Manter_Curso.do" method="post">
+    <form action="controller.do" method="post">
       <div class="row">
         <div class="form-group col-md-2">
           <label for="codigo">Codigo</label>

@@ -13,9 +13,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="ListarAlunos.jsp">Alunos</a>
+                    <li><a href="Listar_Alunos.do?acao=reiniciar">Alunos</a>
                     </li>
-                    <li><a href="ListarCursos.jsp">Cursos</a>
+                    <li><a href="Listar_Cursos.do?acao=reiniciar">Cursos</a>
                     </li>
                 </ul>
             </div>

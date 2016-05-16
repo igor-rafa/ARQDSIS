@@ -107,7 +107,7 @@ public class CursoDAO {
 public ArrayList<CursoTO> listarCursos() {
 	CursoTO to;
 	ArrayList<CursoTO> lista = new ArrayList<>();
-	String sqlSelect = "SELECT id, nome, fone, email FROM cliente";
+	String sqlSelect = "SELECT codigo, nome, tipo, dataDeInicio, dataDeTermino, horario, numeroDeVagas, valor, tipoLab, softwares, livros, descricaoMaterial FROM curso";
 	// usando o try with resources do Java 7, que fecha o que abriu
 	try (Connection conn = ConnectionFactory.obtemConexao();
 			PreparedStatement stm = conn.prepareStatement(sqlSelect);) {

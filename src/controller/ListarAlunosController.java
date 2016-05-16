@@ -9,9 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.ListarAlunos;
+import model.Vendedor;
 import to.AlunoTO;
+import to.ClienteTO;
 
 
 /**
@@ -25,18 +28,27 @@ public class ListarAlunosController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setCharacterEncoding("UTF-8");
 		String chave = request.getParameter("data[search]");
-		ListarAlunos listaAlunos = new ListarAlunos();
-		ArrayList<AlunoTO> lista;
-		if(chave != null && chave.length() > 0){
-			lista = listaAlunos.listarAlunos(chave);
-		} else {
-			lista = listaAlunos.listarAlunos();
+		String acao = request.getParameter("acao");
+		ListarAlunos listarAlunos = new ListarAlunos();
+		ArrayList<AlunoTO> lista = null;
+		HttpSession session = request.getSession();
+		if (acao.equals("buscar")) {
+			if (chave != null && chave.length() > 0) {
+				lista = listarAlunos.listarAlunos(chave);
+			} else {
+				lista = listarAlunos.listarAlunos();
+			}
+			session.setAttribute("lista", lista);
+		} else if (acao.equals("reiniciar")) {
+			session.setAttribute("lista", null);
 		}
-		request.setAttribute("lista", lista);
-	RequestDispatcher dispatcher = request.
-			getRequestDispatcher("ListarAlunos.jsp");
-	dispatcher.forward(request, response);
+	
+		RequestDispatcher dispatcher = request
+				.getRequestDispatcher("ListarAlunos.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

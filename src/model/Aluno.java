@@ -152,6 +152,22 @@ public class Aluno {
 		this.telefone = telefone;
 	}
 	
+	public AlunoTO getTO() {
+		AlunoTO to = new AlunoTO();
+		to.setCodigo(codigo);
+		to.setNome(nome);
+		to.setSexo(sexo);
+		to.setDataNascimento(dataNascimento);
+		to.setTelefone(telefone);
+		to.setEndereco(endereco);
+		to.setNumero(numero);
+		to.setComplemento(complemento);
+		to.setRG(rg);
+		to.setCPF(cpf);
+		to.setEmail(email);
+		return to;
+	}
+	
 	public void criar() {
 		AlunoDAO dao = new AlunoDAO();
 		AlunoTO to = new AlunoTO();

@@ -7,7 +7,7 @@
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Buscar Cursos</title>
+            <title>Buscar Alunos</title>
 
             <link href="css/bootstrap.min.css" rel="stylesheet">
             <link href="css/style.css" rel="stylesheet">
@@ -22,13 +22,13 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span>
                             </button>
-                            <h4 class="modal-title" id="modalLabel">Excluir Cursos</h4>
+                            <h4 class="modal-title" id="modalLabel">Excluir Alunos</h4>
                         </div>
                         <div class="modal-body">
-                            Deseja realmente excluir este curso?
+                            Deseja realmente excluir este aluno?
                         </div>
                         <div class="modal-footer">
-                            <form action="ManterCurso.do" method="post">
+                            <form action="ManterCliente.do" method="post">
                                 <input type="hidden" name="id" id="id_excluir" />
                                 <button type="submit" class="btn btn-primary" name="acao" value="Excluir">Sim</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
@@ -42,15 +42,15 @@
 			<c:import url="Menu.jsp"/>
             <!-- Container Principal -->
             <div id="main" class="container-fluid">
-                <form action="listar_cursos.do" method="post">
+                <form action="listar_alunos.do" method="post">
                     <div id="top" class="row">
                         <div class="col-md-3">
-                            <h2>Cursos</h2>
+                            <h2>Alunos</h2>
                         </div>
 
                         <div class="col-md-6">
                             <div class="input-group h2">
-                                <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Cursos (deixe vazio para trazer todos)">
+                                <input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Alunos (deixe vazio para trazer todos)">
                                 <span class="input-group-btn">
                 <button class="btn btn-primary" type="submit">
                     <span class="glyphicon glyphicon-search"></span>
@@ -60,7 +60,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <a href="CriarCurso.jsp" class="btn btn-primary pull-right h2">Novo Curso</a>
+                            <a href="CriarAluno.jsp" class="btn btn-primary pull-right h2">Novo Aluno</a>
                         </div>
                     </div>
                     <!-- /#top -->
@@ -75,16 +75,15 @@
                                 <tr>
                                     <th>Código</th>
                                     <th>Nome</th>
-                                    <th>Tipo</th>
-                                    <th>Data de início</th>
-                                    <th>Data de termino</th>
-                                    <th>Horário</th>
-                                    <th>Número de vagas</th>
-                                    <th>Valor</th>
-                                    <th>Tipo de lab</th>
-                                    <th>Softwares</th>
-                                    <th>Livros</th>
-                                    <th>Descrição material</th>                         
+                                    <th>Data de nascimento</th>
+                                    <th>Sexo</th>
+                                    <th>Endereço</th>
+                                    <th>Número</th>
+                                    <th>Complemento</th>
+                                    <th>RG</th>
+                                    <th>CPF</th>
+                                    <th>Email</th>
+                                    <th>Telefone</th>
                                     <th class="actions">Ações</th>
                                 </tr>
                             </thead>
@@ -92,45 +91,42 @@
           					<c:forEach var="aluno" items="${lista }">
                                        <tr>
                                             <td>
-                                               ${curso.codigo }
+                                               ${aluno.codigo }
                                             </td>
                                             <td>
-                                                ${curso.nome }
+                                                ${aluno.nome }
                                             </td>
                                             <td>
-                                                ${curso.tipo }
+                                                ${aluno.dataNascimento }
                                             </td>
                                             <td>
-                                                ${curso.dataDeInicio }
+                                                ${aluno.sexo }
                                             </td>
                                             <td>
-                                                ${curso.dataDeTermino }
+                                                ${aluno.endereco }
                                             </td>
                                             <td>
-                                                ${curso.horario }
+                                                ${aluno.numero }
                                             </td>
                                             <td>
-                                                ${curso.numeroDeVagas }
+                                                ${aluno.complemento }
                                             </td>
                                             <td>
-                                                ${curso.valor }
+                                                ${aluno.rg }
                                             </td>
                                             <td>
-                                                ${curso.tipoLab }
+                                                ${aluno.cpf }
                                             </td>
                                             <td>
-                                                ${curso.softwares }
+                                                ${aluno.email }
                                             </td>
                                             <td>
-                                                ${curso.livros }
-                                            </td>
-                                            <td>
-                                                ${curso.descricaoMaterial }
+                                                ${aluno.telefone }
                                             </td>
                                             <td class="actions">
-                                                <a class="btn btn-success btn-xs" href="ManterCurso.do?acao=Visualizar&id=${curso.codigo }">Visualizar</a>
-                                                <a class="btn btn-warning btn-xs" href="ManterCurso.do?acao=Editar&id=${curso.codigo }">Editar</a>
-                                                <button id="btn${curso.codigo }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${curso.codigo }">Excluir</button>
+                                                <a class="btn btn-success btn-xs" href="ManterAluno.do?acao=Visualizar&id=${aluno.codigo }">Visualizar</a>
+                                                <a class="btn btn-warning btn-xs" href="ManterAluno.do?acao=Editar&id=${aluno.codigo }">Editar</a>
+                                                <button id="btn${aluno.codigo }%>" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal" data-cliente="${aluno.codigo }">Excluir</button>
                                             </td>
                                         </tr>
                             </c:forEach>
@@ -169,8 +165,8 @@
             <script type="text/javascript">
                 $("#delete-modal").on('show.bs.modal', function(event) {
                     var button = $(event.relatedTarget); //botao que disparou a modal
-                    var recipient = button.data('curso');
-                    $("#codigo_excluir").val(recipient);
+                    var recipient = button.data('aluno');
+                    $("#id_excluir").val(recipient);
                 });
             </script>
         </body>

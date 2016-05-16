@@ -1,13 +1,16 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import model.Curso;
+import to.CursoTO;
 
 @WebServlet("/Manter_Curso.do")
 
@@ -43,32 +46,31 @@ public class ManterCursoController extends HttpServlet{
 		int pCodigo = Integer.parseInt(request.getParameter("codigo"));
 		
 		Curso curso = new Curso(pCodigo, pNome, pTipo, pDataInicio, pDataTermino, pHorario, pValor, pNumeroVagas, pTipoLaboratorio, pSoftwares, pLivros, pDescricao);
-		if(pAcao.equals("Inserir")){
+		RequestDispatcher view = null;
+		
+		if (pAcao.equals("Criar")) {
 			curso.criar();
-		} else if (pAcao.equals("Atualizar")){
-			curso.atualizar();
-		} else if (pAcao.equals("Excluir")){
+			ArrayList<CursoTO> lista = new ArrayList<>();
+			lista.add(curso.getTO());
+			request.setAttribute("lista", lista);
+			view = request.getRequestDispatcher("ListarCursos.jsp");
+		} else if (pAcao.equals("Excluir")) {
 			curso.excluir();
+			view = request.getRequestDispatcher("ListarCursos.jsp");			
+		} else if (pAcao.equals("Alterar")) {
+			curso.atualizar();
+			request.setAttribute("curso", curso.getTO());
+			view = request.getRequestDispatcher("VisualizarCursos.jsp");			
+		} else if (pAcao.equals("Visualizar")) {
+			curso.carregar();
+			request.setAttribute("curso", curso.getTO());
+			view = request.getRequestDispatcher("VisualizarCursos.jsp");		
+		} else if (pAcao.equals("Editar")) {
+			curso.carregar();
+			request.setAttribute("curso", curso.getTO());
+			view = request.getRequestDispatcher("AlterarCursos.jsp");		
 		}
-		curso.carregar();
 		
-		CursoTo to = new CursoTO();
-		to.setCodigo(curso.getCodigo());
-		to.setNome(curso.getNome());
-		to.setTipo(curso.getTipo());
-		to.setDataDeInicio(curso.getDataDeInicio());
-		to.setDataDeTermino(curso.getDataDeTermino());
-		to.setHorario(curso.getHorario());
-		to.setNumeroDeVagas(curso.getNumeroDeVagas());
-		to.setValor(curso.getValor());
-		to.setTipoLab(curso.getTipoLab());
-		to.setSoftwares(curso.getSoftwares());
-		to.setLivros(curso.getLivros());
-		to.setDescricao(curso.getDescricao());
-		
-		request.setAttribute("curso", to);
-		
-		RequestDispatcher view = request.getRequestDispatcher("Curso.jsp");
 		view.forward(request, response);
 	}
 	

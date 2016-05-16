@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,31 +42,31 @@ public class ManterAlunoController extends HttpServlet{
 		int pCodigo = Integer.parseInt(request.getParameter("codigo"));
 		
 		Aluno aluno = new Aluno(pCodigo, pNome, pSexo, pDataNascimento, pEndereco, pNumero, pComplemento, pRg, pCpf, pTelefone, pEmail);
-		if(pAcao.equals("Inserir")){
+		RequestDispatcher view = null;
+		
+		if (pAcao.equals("Criar")) {
 			aluno.criar();
-		} else if (pAcao.equals("Atualizar")){
-			aluno.atualizar();
-		} else if (pAcao.equals("Excluir")){
+			ArrayList<AlunoTO> lista = new ArrayList<>();
+			lista.add(aluno.getTO());
+			request.setAttribute("lista", lista);
+			view = request.getRequestDispatcher("ListarAlunos.jsp");
+		} else if (pAcao.equals("Excluir")) {
 			aluno.excluir();
+			view = request.getRequestDispatcher("ListarAlunos.jsp");			
+		} else if (pAcao.equals("Alterar")) {
+			aluno.atualizar();
+			request.setAttribute("aluno", aluno.getTO());
+			view = request.getRequestDispatcher("VisualizarAlunos.jsp");			
+		} else if (pAcao.equals("Visualizar")) {
+			aluno.carregar();
+			request.setAttribute("aluno", aluno.getTO());
+			view = request.getRequestDispatcher("VisualizarAlunos.jsp");		
+		} else if (pAcao.equals("Editar")) {
+			aluno.carregar();
+			request.setAttribute("aluno", aluno.getTO());
+			view = request.getRequestDispatcher("AlterarAlunos.jsp");		
 		}
-		aluno.carregar();
 		
-		AlunoTO to = new AlunoTO();
-		to.setCodigo(aluno.getCodigo());
-		to.setNome(aluno.getNome());
-		to.setSexo(aluno.getSexo());
-		to.setDataNascimento(aluno.getDataNascimento());
-		to.setEndereco(aluno.getEndereco());
-		to.setNumero(aluno.getNumero());;
-		to.setComplemento(aluno.getComplemento());
-		to.setRG(aluno.getRG());
-		to.setCPF(aluno.getCPF());
-		to.setTelefone(aluno.getTelefone());
-		to.setEmail(aluno.getEmail());
-		
-		request.setAttribute("aluno", to);
-		
-		RequestDispatcher view = request.getRequestDispatcher("Aluno.jsp");
 		view.forward(request, response);
 	}
 

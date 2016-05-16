@@ -157,6 +157,26 @@ public class Curso {
 
 		this.descricaoMaterial = descricaoMaterial;
 	}
+	
+	public CursoTO getTO() {
+		CursoTO to = new CursoTO();
+		
+		to.setCodigo(codigo);
+		to.setNome(nome);
+		to.setTipo(tipo);
+		to.setDataDeInicio(dataDeInicio);
+		to.setDataDeTermino(dataDeTermino);
+		to.setHorario(horario);
+		to.setValor(valor);
+		to.setNumeroDeVagas(numeroDeVagas);
+		to.setTipoLab(tipoLab);
+		to.setSoftwares(softwares);
+		to.setLivros(livros);
+		to.setDescricao(descricaoMaterial);
+		
+		return to;
+	}
+
 
 	public void criar() {
 		CursoDAO dao = new CursoDAO();

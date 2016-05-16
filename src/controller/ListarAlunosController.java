@@ -9,39 +9,41 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.ListarCursos;
-import to.CursoTO;
+
+import model.ListarAlunos;
+import to.AlunoTO;
+
 
 /**
- * Servlet implementation class ListarClientesController
+ * Servlet implementation class ListarAlunosController
  */
-@WebServlet("/listar_curso.do")
-
-public class ListarCursoController extends HttpServlet {
+@WebServlet("/Listar_Alunos.do")
+public class ListarAlunosController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String chave = request.getParameter("data[search]");
-			ListarCursos curso = new ListarCursos();
-			ArrayList<CursoTO> lista;
-			if(chave != null && chave.length() > 0){
-				lista = curso.listarCursos(chave);
-			} else {
-				lista = curso.listarCursos();
-			}
-			request.setAttribute("lista", lista);
-		RequestDispatcher dispatcher = request.
-				getRequestDispatcher("ListarCurso.jsp");
-		dispatcher.forward(request, response);
+		String chave = request.getParameter("data[search]");
+		ListarAlunos listaAlunos = new ListarAlunos();
+		ArrayList<AlunoTO> lista;
+		if(chave != null && chave.length() > 0){
+			lista = listaAlunos.listarAlunos(chave);
+		} else {
+			lista = listaAlunos.listarAlunos();
+		}
+		request.setAttribute("lista", lista);
+	RequestDispatcher dispatcher = request.
+			getRequestDispatcher("ListarAlunos.jsp");
+	dispatcher.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

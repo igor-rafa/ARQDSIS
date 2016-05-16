@@ -4,12 +4,15 @@
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Gerenciar Curso</title>
+ <title>Cadastrar Curso</title>
 
  <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body> 
-  <div id="main" class="container-fluid">
+	<!-- Barra superior com os menus de navegação -->
+	<c:import url="Menu.jsp" />
+	<!-- Container Principal -->
+  	<div id="main" class="container-fluid">
     <h3 class="page-header">Adicionar Curso</h3>
     <form action="Manter_Curso.do" method="post">
       <div class="row">
@@ -30,26 +33,26 @@
      <div class="row">
       <div class="form-group col-md-4">
         <label for="data/inicio">Data/Inicio</label>
-        <input type="text" class="form-control" id="dataInicio">
+        <input type="Date" class="form-control" id="dataInicio">
       </div>
       <div class="form-group col-md-4">
         <label for="Data/Fim">Data/Fim</label>
-        <input type="text" class="form-control" id="dataTermino">
+        <input type="Date" class="form-control" id="dataTermino">
       </div>
       <div class="form-group col-md-4">
-       <label for="campo3">HorÃ¡rio</label>
-       <input type="text" class="form-control" id="horario">
+       <label for="campo3">Horário</label>
+       <input type="time" class="form-control" id="horario">
      </div>
    </div>
 
    <div class="row">
     <div class="form-group col-md-4">
       <label for="Valor">Valor</label>
-      <input type="text" class="form-control" id="valor">
+      <input type="number" class="form-control" id="valor">
     </div>
     <div class="form-group col-md-4">
-      <label for="numero">NÃºmero de vagas</label>
-      <input type="text" class="form-control" id="numeroVagas">
+      <label for="numero">Número de vagas</label>
+      <input type="number" class="form-control" id="numeroVagas">
     </div>
     <div class="form-group col-md-4">
      <label for="Tipos">Tipos de Laboratorios</label>
@@ -69,25 +72,18 @@
 </div>
 <div class="row">
   <div class="form-group col-md-12">
-    <label for="Softwares">DescriÃ§Ã£o</label>
+    <label for="Softwares">Descrição</label>
     <input type="text" class="form-control" id="softwares">
   </div>
 </div>
 <hr />
 
 <div id="actions" class="row">
-  <div class="form-group col-md-2 col-md-offset-2">
-    <input type="submit" class="btn btn-success form-control" name="acao" value="Inserir">
-  </div>
-  <div class="form-group col-md-2">
-    <input type="submit" class="btn btn-warning form-control" name="acao" value="Atualizar">
-  </div>
-  <div class="form-group col-md-2">
-    <input type="submit" class="btn btn-info form-control" name="acao" value="Carregar">
-  </div>
-  <div class="form-group col-md-2">
-    <input type="submit" class="btn btn-danger form-control" name="acao" value="Excluir">
-  </div>
+	<div class="col-md-12">
+		<button type="submit" class="btn btn-primary" name="acao"
+			value="Criar">Inserir</button>
+		<a href="index.jsp" class="btn btn-default">Cancelar</a>
+	</div>
 </div>
 </form>
 </div>

@@ -28,11 +28,10 @@
 						class="form-control" id="nome" name="nome">
 				</div>
 				<div class="form-group col-md-4">
-					<label for="Sexo">Sexo</label>
-					<div class="radio">
-						<label><input type="radio" name="masculino" value="masc">Masculino</label>
-						<label><input type="radio" name="feminino" value="fem">Feminino</label>
-					</div>
+					<div class="form-group col-md-6">
+					<label for="sexo">sexo</label> <input type="text"
+						class="form-control" id="sexo" value="sexo">
+				</div>
 				</div>
 			</div>
 
@@ -76,8 +75,7 @@
 
 			<div id="actions" class="row">
 				<div class="col-md-12">
-					<button type="submit" class="btn btn-primary" name="acao"
-						value="Criar">Inserir</button>
+					<button type="submit" name="command" value="CriarAluno" class="btn btn-primary">Inserir</button>
 					<a href="index.jsp" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>

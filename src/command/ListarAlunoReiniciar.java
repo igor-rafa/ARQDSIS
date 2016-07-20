@@ -16,7 +16,7 @@ public class ListarAlunoReiniciar implements Command {
 		session.setAttribute("lista", null);
 
 		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("ListarAluno.jsp");
+				.getRequestDispatcher("ListarAlunos.jsp");
 		dispatcher.forward(request, response);
 
 	}

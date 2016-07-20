@@ -87,9 +87,9 @@ public class AlunoTO {
 		this.cpf = cpf;
 	}
 
-	public void setRG(String rg) {
+	public void setRG(String nvrg) {
 
-		this.rg = rg;
+		this.rg = nvrg;
 	}
 
 	public void setEndereco(String nvEndereco) {

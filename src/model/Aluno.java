@@ -171,6 +171,7 @@ public class Aluno {
 	public void criar() {
 		AlunoDAO dao = new AlunoDAO();
 		AlunoTO to = new AlunoTO();
+		System.out.println("------>"+rg);
 		
 		to.setCodigo(codigo);
 		to.setNome(nome);

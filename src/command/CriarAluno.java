@@ -31,15 +31,14 @@ public class CriarAluno implements Command {
 		int pCodigo = Integer.parseInt(request.getParameter("codigo"));
 
 
-		Aluno aluno = new Aluno(pCodigo, pNome, pSexo, pDataNascimento, pEndereco, pNumero, pComplemento, pRg, pCpf, pTelefone, pEmail);
-		RequestDispatcher view = null;
+		Aluno aluno = new Aluno(pCodigo, pNome, pSexo, pDataNascimento, pEndereco, pNumero, pComplemento, pCpf, pRg, pTelefone, pEmail);
 		HttpSession session = request.getSession();
 
 		aluno.criar();
 		ArrayList<AlunoTO> lista = new ArrayList<>();
 		lista.add(aluno.getTO());
 		session.setAttribute("lista", lista);
-		view = request.getRequestDispatcher("ListarAlunos.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("ListarAlunos.jsp");
 		view.forward(request, response);		
 	}
 }
